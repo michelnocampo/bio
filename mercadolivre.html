@@ -94,18 +94,25 @@
             background-color: var(--cor-btn-fundo);
             color: var(--cor-btn-texto);
             text-decoration: none;
-            padding: 1rem 2rem;
+            /* AJUSTE: Espaçamento lateral maior para o texto não bater no ícone */
+            padding: 1rem 3.5rem; 
             border-radius: 50px; 
             font-weight: 500;
             font-size: 1.05rem;
             border: 2px solid var(--cor-btn-borda);
             backdrop-filter: blur(5px); 
             transition: all 0.3s ease; 
+            /* AJUSTE: Centraliza o texto e define a altura da linha */
+            text-align: center;
+            line-height: 1.3;
         }
 
         .link-botao i {
             position: absolute;
             left: 1.5rem; 
+            /* AJUSTE: Mantém o ícone centralizado perfeitamente no meio (verticalmente) */
+            top: 50%;
+            transform: translateY(-50%);
             font-size: 1.4rem;
         }
 
@@ -138,7 +145,7 @@
         @media (max-width: 380px) {
             .link-botao {
                 font-size: 0.95rem;
-                padding: 0.9rem 1.5rem;
+                padding: 0.9rem 3rem; /* Ajuste do espaçamento interno no celular */
             }
             .link-botao i {
                 left: 1.2rem;
@@ -156,7 +163,7 @@
             }
 
             .link-botao {
-                padding: 1.2rem 2rem;
+                padding: 1.2rem 3.5rem;
                 font-size: 1.1rem;
             }
         }
@@ -177,38 +184,43 @@
 
         <!-- ==========================================
              BOTÕES DE CATEGORIAS
-             Substitua o "#" em href="#" pelos links reais das suas listas do Mercado Livre.
              ========================================== -->
         <div class="links-container">
             
-            <!-- Categoria 1 -->
-            <a href="#" target="_blank" rel="noopener noreferrer" class="link-botao">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="https://meli.la/16Ysv5M">
                 <i class="fa-solid fa-screwdriver-wrench"></i>
                 Ferramentas e utensílios rurais
             </a>
 
-            <!-- Categoria 2 -->
-            <a href="#" target="_blank" rel="noopener noreferrer" class="link-botao">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="https://meli.la/1VKHku5">
                 <i class="fa-solid fa-seedling"></i>
                 Jardim, horta e plantio
             </a>
 
-            <!-- Categoria 3 -->
-            <a href="#" target="_blank" rel="noopener noreferrer" class="link-botao">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="https://meli.la/1Dpm6Yg">
                 <i class="fa-solid fa-paw"></i>
                 Animais e criação
             </a>
 
-            <!-- Categoria 4 -->
-            <a href="#" target="_blank" rel="noopener noreferrer" class="link-botao">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="https://meli.la/2B1LJGy">
                 <i class="fa-solid fa-shield-halved"></i>
                 Sobrevivência & Proteção
             </a>
 
-            <!-- Categoria 5 -->
-            <a href="#" target="_blank" rel="noopener noreferrer" class="link-botao">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="https://meli.la/13n9BUQ">
                 <i class="fa-solid fa-solar-panel"></i>
                 Energia e autonomia no campo
+            </a>
+            
+            <!-- Novos Botões -->
+            <a href="#" target="_blank" rel="noopener noreferrer" class="https://meli.la/1MbkmKu">
+                <i class="fa-solid fa-book"></i>
+                Livros
+            </a>
+
+            <a href="#" target="_blank" rel="noopener noreferrer" class="https://meli.la/14XjKDz">
+                <i class="fa-solid fa-tree"></i>
+                Árvores frutíferas
             </a>
 
             <!-- Botão Voltar -->

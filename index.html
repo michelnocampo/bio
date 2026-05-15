@@ -16,33 +16,24 @@
     <style>
         /* ==========================================================================
            ÁREA DE CONFIGURAÇÃO DE CORES (FÁCIL EDIÇÃO)
-           Altere os códigos HEX (#...) abaixo para mudar as cores do site.
            ========================================================================== */
         :root {
-            /* Fundo da página (Gradiente de verde claro para marrom terra claro) */
-            --cor-fundo-topo: #E8F5E9;   /* Verde folha bem suave */
-            --cor-fundo-base: #D7CCC8;   /* Marrom/Areia suave */
-
-            /* Cores dos Textos */
-            --cor-texto-nome: #2E3B22;   /* Verde musgo muito escuro */
-            --cor-texto-bio: #4E342E;    /* Marrom terra */
-
-            /* Cores dos Botões (Estado normal) */
-            --cor-btn-fundo: rgba(255, 255, 255, 0.6); /* Branco levemente transparente */
-            --cor-btn-borda: #81C784;    /* Verde natureza claro */
-            --cor-btn-texto: #2E3B22;    /* Verde musgo escuro */
-
-            /* Cores dos Botões (Quando passa o mouse por cima - Hover) */
-            --cor-btn-hover-fundo: #558B2F; /* Verde folha escuro e rústico */
-            --cor-btn-hover-texto: #FFFFFF; /* Branco */
+            var(--cor-fundo-topo): #E8F5E9;
+            --cor-fundo-topo: #E8F5E9;   
+            --cor-fundo-base: #D7CCC8;   
+            --cor-texto-nome: #2E3B22;   
+            --cor-texto-bio: #4E342E;    
+            --cor-btn-fundo: rgba(255, 255, 255, 0.6); 
+            --cor-btn-borda: #81C784;    
+            --cor-btn-texto: #2E3B22;    
+            --cor-btn-hover-fundo: #558B2F; 
+            --cor-btn-hover-texto: #FFFFFF; 
             --cor-btn-hover-sombra: rgba(85, 139, 47, 0.4);
         }
 
         /* ==========================================================================
            ESTILOS DO SITE (CSS)
            ========================================================================== */
-        
-        /* Reset básico para manter tudo alinhado */
         * {
             margin: 0;
             padding: 0;
@@ -51,43 +42,38 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            /* Fundo com gradiente suave */
             background: linear-gradient(135deg, var(--cor-fundo-topo) 0%, var(--cor-fundo-base) 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: center; /* Centraliza no meio da tela no PC */
-            padding: 2rem 1.5rem; /* Ajustado para mobile */
+            align-items: center; 
+            padding: 2rem 1.5rem; 
         }
 
-        /* Container principal que centraliza o conteúdo */
         .container {
             width: 100%;
-            max-width: 600px; /* Alargado um pouco para acomodar bem no PC */
+            max-width: 600px; 
             text-align: center;
             padding: 2rem 1rem;
             border-radius: 24px;
             transition: all 0.3s ease;
         }
 
-        /* Estilo da Foto de Perfil */
         .perfil-img {
             width: 130px;
             height: 130px;
-            border-radius: 50%; /* Deixa a foto redonda */
-            object-fit: cover;  /* Evita que a foto fique esticada */
-            border: 4px solid var(--cor-btn-borda); /* Borda sutil */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra leve */
+            border-radius: 50%; 
+            object-fit: cover;  
+            border: 4px solid var(--cor-btn-borda); 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
             margin-bottom: 1rem;
             transition: transform 0.3s ease;
         }
 
-        /* Efeito ao passar o mouse na foto */
         .perfil-img:hover {
             transform: scale(1.05);
         }
 
-        /* Estilo do Nome (@) */
         .perfil-nome {
             font-size: 1.4rem;
             font-weight: 600;
@@ -96,7 +82,6 @@
             letter-spacing: 0.5px;
         }
 
-        /* Estilo da Biografia */
         .perfil-bio {
             font-size: 0.95rem;
             color: var(--cor-texto-bio);
@@ -105,14 +90,15 @@
             font-weight: 400;
         }
 
-        /* Organização dos Links */
         .links-container {
             display: flex;
             flex-direction: column;
-            gap: 1rem; /* Espaço entre um botão e outro */
+            gap: 1rem; 
         }
 
-        /* Estilo dos Botões de Link */
+        /* ==========================================================================
+           CORREÇÃO DOS BOTÕES PARA MOBILE
+           ========================================================================== */
         .link-botao {
             display: flex;
             align-items: center;
@@ -121,53 +107,51 @@
             background-color: var(--cor-btn-fundo);
             color: var(--cor-btn-texto);
             text-decoration: none;
-            padding: 1rem 2rem;
-            border-radius: 50px; /* Bordas bem arredondadas */
+            /* AJUSTE: Padding igual dos lados (3.5rem) para o texto não bater no ícone */
+            padding: 1rem 3.5rem; 
+            border-radius: 50px; 
             font-weight: 500;
             font-size: 1.05rem;
             border: 2px solid var(--cor-btn-borda);
-            backdrop-filter: blur(5px); /* Dá um leve efeito de vidro fosco no fundo */
-            transition: all 0.3s ease; /* Transição suave para o hover */
+            backdrop-filter: blur(5px); 
+            transition: all 0.3s ease; 
+            /* AJUSTE: Centraliza o texto caso quebre para duas linhas */
+            text-align: center;
+            line-height: 1.3;
         }
 
-        /* Estilo do Ícone dentro do botão */
         .link-botao i {
             position: absolute;
-            left: 1.5rem; /* Posiciona o ícone à esquerda */
+            left: 1.5rem; 
+            /* AJUSTE: Mantém o ícone perfeitamente no centro, independente de quantas linhas o texto tem */
+            top: 50%;
+            transform: translateY(-50%);
             font-size: 1.4rem;
         }
 
-        /* Garante que o EFEITO HOVER só funcione em aparelhos com Mouse (PCs), 
-           evitando bugs visuais no touch do celular */
         @media (hover: hover) {
             .link-botao:hover {
                 background-color: var(--cor-btn-hover-fundo);
                 color: var(--cor-btn-hover-texto);
                 border-color: var(--cor-btn-hover-fundo);
-                transform: translateY(-4px); /* Botão sobe um pouquinho */
-                box-shadow: 0 8px 20px var(--cor-btn-hover-sombra); /* Ganha uma sombra rústica */
+                transform: translateY(-4px); 
+                box-shadow: 0 8px 20px var(--cor-btn-hover-sombra); 
             }
         }
 
-        /* ==========================================================================
-           RESPONSIVIDADE (Celulares pequenos, Tablets e PCs)
-           ========================================================================== */
-
-        /* Responsividade extra para celulares muito pequenos */
+        /* Responsividade */
         @media (max-width: 380px) {
             .link-botao {
                 font-size: 0.95rem;
-                padding: 0.9rem 1.5rem;
+                padding: 0.9rem 3rem; /* Mantém o espaçamento seguro no celular menor */
             }
             .link-botao i {
                 left: 1.2rem;
             }
         }
 
-        /* Responsividade para Tablets e PCs (Telas médias e grandes) */
         @media (min-width: 768px) {
             .container {
-                /* No PC/Tablet, o site vira um "cartão" de vidro (Glassmorphism) */
                 background: rgba(255, 255, 255, 0.25);
                 backdrop-filter: blur(12px);
                 -webkit-backdrop-filter: blur(12px);
@@ -176,13 +160,11 @@
                 border: 1px solid rgba(255, 255, 255, 0.5);
             }
 
-            /* Deixa os botões um pouco mais robustos no PC */
             .link-botao {
-                padding: 1.2rem 2rem;
+                padding: 1.2rem 3.5rem;
                 font-size: 1.1rem;
             }
             
-            /* Aumenta levemente a fonte do texto da bio no PC */
             .perfil-bio {
                 font-size: 1.05rem;
             }
@@ -193,45 +175,26 @@
 
     <div class="container">
         
-        <!-- ==========================================
-             1. FOTO DE PERFIL
-             Substitua o link de src="" pelo link ou caminho da sua foto real.
-             ========================================== -->
         <img src="https://i.postimg.cc/P56v1B0C/minha-foto.jpg" alt="Foto de Michel" class="perfil-img">
-        <!-- Dica: Você pode usar uma imagem local assim: src="minha-foto.jpg" -->
-
-        <!-- ==========================================
-             2. NOME DO PERFIL E BIO
-             ========================================== -->
+        
         <h1 class="perfil-nome">@michelnocampo</h1>
         
         <p class="perfil-bio">
             🌱 Dicas práticas e os melhores equipamentos para te ajudar no campo.<br>
-         
         </p>
 
-        <!-- ==========================================
-             3. BOTÕES DE LINKS (LOJAS E REDES SOCIAIS)
-             Substitua o "#" em href="#" pelo link real do seu perfil.
-             ========================================== -->
         <div class="links-container">
 
             <!-- Link Mercado Livre (Redireciona para subpágina) -->
             <a href="mercadolivre.html" class="link-botao">
-                <i class="fa-solid fa-handshake"></i> <!-- Ícone que remete ao Mercado Livre -->
+                <i class="fa-solid fa-handshake"></i>
                 Indicações no Mercado Livre
             </a>
 
-            <!-- Link Shopee (Substitua o # pelo link da Shopee) -->
-            <a href="#" target="_blank" rel="noopener noreferrer" class="link-botao">
-                <i class="fa-solid fa-bag-shopping"></i> <!-- Ícone de sacola de compras -->
-                Indicações na Shopee
-            </a>
-
-            <!-- Link Amazon (Substitua o # pelo link da Amazon) -->
-            <a href="#" target="_blank" rel="noopener noreferrer" class="link-botao">
-                <i class="fa-brands fa-amazon"></i>
-                Indicações na Amazon
+            <!-- Link E-mail (Substitua seuemail@exemplo.com pelo seu e-mail real) -->
+            <a href="mailto:contatomichelnocampo@gmail.com" class="link-botao">
+                <i class="fa-solid fa-envelope"></i>
+                E-mail de Contato
             </a>
             
             <!-- Link YouTube -->
@@ -259,8 +222,6 @@
             </a>
 
         </div>
-
     </div>
-
 </body>
 </html>
