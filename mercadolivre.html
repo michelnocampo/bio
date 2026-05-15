@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michel no Campo | Mercado Livre</title>
+
+    <!-- Importação da Fonte Poppins (Limpa e Moderna) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Importação dos Ícones (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ==========================================================================
+           ÁREA DE CONFIGURAÇÃO DE CORES (Mantendo o padrão do site)
+           ========================================================================== */
+        :root {
+            --cor-fundo-topo: #E8F5E9;   
+            --cor-fundo-base: #D7CCC8;   
+            --cor-texto-nome: #2E3B22;   
+            --cor-texto-bio: #4E342E;    
+            --cor-btn-fundo: rgba(255, 255, 255, 0.6); 
+            --cor-btn-borda: #81C784;    
+            --cor-btn-texto: #2E3B22;    
+            --cor-btn-hover-fundo: #558B2F; 
+            --cor-btn-hover-texto: #FFFFFF; 
+            --cor-btn-hover-sombra: rgba(85, 139, 47, 0.4);
+            
+            /* Cor especial para o botão de voltar */
+            --cor-btn-voltar-fundo: #4E342E;
+            --cor-btn-voltar-texto: #FFFFFF;
+        }
+
+        /* ==========================================================================
+           ESTILOS DO SITE (CSS)
+           ========================================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--cor-fundo-topo) 0%, var(--cor-fundo-base) 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            padding: 2rem 1.5rem; 
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px; 
+            text-align: center;
+            padding: 2rem 1rem;
+            border-radius: 24px;
+            transition: all 0.3s ease;
+        }
+
+        /* Estilo do Título da Página */
+        .pagina-titulo {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--cor-texto-nome);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+            line-height: 1.3;
+        }
+
+        .pagina-subtitulo {
+            font-size: 0.95rem;
+            color: var(--cor-texto-bio);
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem; 
+        }
+
+        .link-botao {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background-color: var(--cor-btn-fundo);
+            color: var(--cor-btn-texto);
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border-radius: 50px; 
+            font-weight: 500;
+            font-size: 1.05rem;
+            border: 2px solid var(--cor-btn-borda);
+            backdrop-filter: blur(5px); 
+            transition: all 0.3s ease; 
+        }
+
+        .link-botao i {
+            position: absolute;
+            left: 1.5rem; 
+            font-size: 1.4rem;
+        }
+
+        /* Estilo específico para o botão de voltar */
+        .btn-voltar {
+            margin-top: 1.5rem;
+            background-color: transparent;
+            border-color: var(--cor-btn-voltar-fundo);
+            color: var(--cor-btn-voltar-fundo);
+        }
+
+        @media (hover: hover) {
+            .link-botao:hover {
+                background-color: var(--cor-btn-hover-fundo);
+                color: var(--cor-btn-hover-texto);
+                border-color: var(--cor-btn-hover-fundo);
+                transform: translateY(-4px); 
+                box-shadow: 0 8px 20px var(--cor-btn-hover-sombra); 
+            }
+            
+            .btn-voltar:hover {
+                background-color: var(--cor-btn-voltar-fundo);
+                color: var(--cor-btn-voltar-texto);
+                border-color: var(--cor-btn-voltar-fundo);
+                box-shadow: 0 8px 20px rgba(78, 52, 46, 0.3);
+            }
+        }
+
+        /* Responsividade */
+        @media (max-width: 380px) {
+            .link-botao {
+                font-size: 0.95rem;
+                padding: 0.9rem 1.5rem;
+            }
+            .link-botao i {
+                left: 1.2rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                background: rgba(255, 255, 255, 0.25);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                padding: 3rem;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(255, 255, 255, 0.5);
+            }
+
+            .link-botao {
+                padding: 1.2rem 2rem;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- ==========================================
+             CABEÇALHO DA PÁGINA DE LISTAS
+             ========================================== -->
+        <h1 class="pagina-titulo">📦 Minhas listas de indicações no Mercado Livre</h1>
+        
+        <p class="pagina-subtitulo">
+            Escolha uma categoria abaixo para ver os produtos que eu recomendo.
+        </p>
+
+        <!-- ==========================================
+             BOTÕES DE CATEGORIAS
+             Substitua o "#" em href="#" pelos links reais das suas listas do Mercado Livre.
+             ========================================== -->
+        <div class="links-container">
+            
+            <!-- Categoria 1 -->
+            <a href="#" target="_blank" rel="noopener noreferrer" class="link-botao">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                Ferramentas e utensílios rurais
+            </a>
+
+            <!-- Categoria 2 -->
+            <a href="#" target="_blank" rel="noopener noreferrer" class="link-botao">
+                <i class="fa-solid fa-seedling"></i>
+                Jardim, horta e plantio
+            </a>
+
+            <!-- Categoria 3 -->
+            <a href="#" target="_blank" rel="noopener noreferrer" class="link-botao">
+                <i class="fa-solid fa-paw"></i>
+                Animais e criação
+            </a>
+
+            <!-- Categoria 4 -->
+            <a href="#" target="_blank" rel="noopener noreferrer" class="link-botao">
+                <i class="fa-solid fa-shield-halved"></i>
+                Sobrevivência & Proteção
+            </a>
+
+            <!-- Categoria 5 -->
+            <a href="#" target="_blank" rel="noopener noreferrer" class="link-botao">
+                <i class="fa-solid fa-solar-panel"></i>
+                Energia e autonomia no campo
+            </a>
+
+            <!-- Botão Voltar -->
+            <a href="index.html" class="link-botao btn-voltar">
+                <i class="fa-solid fa-arrow-left"></i>
+                Voltar para a página principal
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
