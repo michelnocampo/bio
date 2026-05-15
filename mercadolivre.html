@@ -5,18 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michel no Campo | Mercado Livre</title>
 
-    <!-- Importação da Fonte Poppins (Limpa e Moderna) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Importação dos Ícones (FontAwesome) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* ==========================================================================
-           ÁREA DE CONFIGURAÇÃO DE CORES (Mantendo o padrão do site)
-           ========================================================================== */
         :root {
             --cor-fundo-topo: #E8F5E9;   
             --cor-fundo-base: #D7CCC8;   
@@ -29,14 +24,10 @@
             --cor-btn-hover-texto: #FFFFFF; 
             --cor-btn-hover-sombra: rgba(85, 139, 47, 0.4);
             
-            /* Cor especial para o botão de voltar */
             --cor-btn-voltar-fundo: #4E342E;
             --cor-btn-voltar-texto: #FFFFFF;
         }
 
-        /* ==========================================================================
-           ESTILOS DO SITE (CSS)
-           ========================================================================== */
         * {
             margin: 0;
             padding: 0;
@@ -62,7 +53,6 @@
             transition: all 0.3s ease;
         }
 
-        /* Estilo do Título da Página */
         .pagina-titulo {
             font-size: 1.4rem;
             font-weight: 600;
@@ -94,7 +84,6 @@
             background-color: var(--cor-btn-fundo);
             color: var(--cor-btn-texto);
             text-decoration: none;
-            /* AJUSTE: Espaçamento lateral maior para o texto não bater no ícone */
             padding: 1rem 3.5rem; 
             border-radius: 50px; 
             font-weight: 500;
@@ -102,7 +91,6 @@
             border: 2px solid var(--cor-btn-borda);
             backdrop-filter: blur(5px); 
             transition: all 0.3s ease; 
-            /* AJUSTE: Centraliza o texto e define a altura da linha */
             text-align: center;
             line-height: 1.3;
         }
@@ -110,13 +98,11 @@
         .link-botao i {
             position: absolute;
             left: 1.5rem; 
-            /* AJUSTE: Mantém o ícone centralizado perfeitamente no meio (verticalmente) */
             top: 50%;
             transform: translateY(-50%);
             font-size: 1.4rem;
         }
 
-        /* Estilo específico para o botão de voltar */
         .btn-voltar {
             margin-top: 1.5rem;
             background-color: transparent;
@@ -141,11 +127,10 @@
             }
         }
 
-        /* Responsividade */
         @media (max-width: 380px) {
             .link-botao {
                 font-size: 0.95rem;
-                padding: 0.9rem 3rem; /* Ajuste do espaçamento interno no celular */
+                padding: 0.9rem 3rem;
             }
             .link-botao i {
                 left: 1.2rem;
@@ -173,57 +158,52 @@
 
     <div class="container">
         
-        <!-- ==========================================
-             CABEÇALHO DA PÁGINA DE LISTAS
-             ========================================== -->
         <h1 class="pagina-titulo">📦 Minhas listas de indicações no Mercado Livre</h1>
         
         <p class="pagina-subtitulo">
             Escolha uma categoria abaixo para ver os produtos que eu recomendo.
         </p>
 
-        <!-- ==========================================
-             BOTÕES DE CATEGORIAS
-             ========================================== -->
         <div class="links-container">
             
-            <a href="#" target="_blank" rel="noopener noreferrer"class="https://meli.la/16Ysv5M">
+            <!-- ATENÇÃO: Cole o link APENAS onde diz COLE_SEU_LINK_AQUI, não apague as aspas "" ao redor dele -->
+            
+            <a href="COLE_SEU_LINK_AQUI" target="_blank" rel="noopener noreferrer" class="link-botao">
                 <i class="fa-solid fa-screwdriver-wrench"></i>
                 Ferramentas e utensílios rurais
             </a>
 
-            <a href="#" target="_blank" rel="noopener noreferrer"class="https://meli.la/1VKHku5">
+            <a href="https://meli.la/1VKHku5" target="_blank" rel="noopener noreferrer" class="link-botao">
                 <i class="fa-solid fa-seedling"></i>
                 Jardim, horta e plantio
             </a>
 
-            <a href="#" target="_blank" rel="noopener noreferrer"class="https://meli.la/1Dpm6Yg">
+            <a href="https://meli.la/1Dpm6Yg" target="_blank" rel="noopener noreferrer" class="link-botao">
                 <i class="fa-solid fa-paw"></i>
                 Animais e criação
             </a>
 
-            <a href="#" target="_blank" rel="noopener noreferrer"class="https://meli.la/2B1LJGy">
+            <a href="https://meli.la/2B1LJGy" target="_blank" rel="noopener noreferrer" class="link-botao">
                 <i class="fa-solid fa-shield-halved"></i>
                 Sobrevivência & Proteção
             </a>
 
-            <a href="#" target="_blank" rel="noopener noreferrer"class="https://meli.la/13n9BUQ">
+            <a href="https://meli.la/13n9BUQ" target="_blank" rel="noopener noreferrer" class="link-botao">
                 <i class="fa-solid fa-solar-panel"></i>
                 Energia e autonomia no campo
             </a>
             
-            <!-- Novos Botões -->
-            <a href="#" target="_blank" rel="noopener noreferrer"class="https://meli.la/1MbkmKu">
+            <a href="https://meli.la/1MbkmKu" target="_blank" rel="noopener noreferrer" class="link-botao">
                 <i class="fa-solid fa-book"></i>
                 Livros
             </a>
 
-            <a href="#" target="_blank" rel="noopener noreferrer"class="https://meli.la/14XjKDz">
+            <a href="https://meli.la/14XjKDz" target="_blank" rel="noopener noreferrer" class="link-botao">
                 <i class="fa-solid fa-tree"></i>
                 Árvores frutíferas
             </a>
 
-            <!-- Botão Voltar -->
+            <!-- O botão de voltar não precisa mexer -->
             <a href="index.html" class="link-botao btn-voltar">
                 <i class="fa-solid fa-arrow-left"></i>
                 Voltar para a página principal
